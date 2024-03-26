@@ -39,6 +39,8 @@ case $cmd in
 	    -p 5432:5432 postgres:9.6-alpine
 
   # Make sure you understand what's `$?`
+  echo $db_username
+  echo $db_password
 	exit $?
 	;;
 

@@ -10,21 +10,24 @@ if [ "$#" -ne 5 ]; then
     exit 1
 fi
 
+vmstat_mb=$(vmstat --unit M)
+hostname=$(hostname -f)
+
 #parse server CPU and memory usage data using bash scripts
 cpu_idle=$(vmstat | awk '{print $15}'| tail -n1 | xargs)
 cpu_kernel=$(vmstat | awk '{print $14}'| tail -n1 | xargs)
-memory_free=$(free -m | awk '{print $4}'| tail -n1 | xargs)
+memory_free=$(echo "$vmstat_mb" | awk '{print $4}'| tail -n1 | xargs)
 disk_io=$(vmstat -d | awk '{print $10}'| tail -n1 | xargs)
-
+disk_available=$(df -BM / | awk '{print $4}'| tail -n1  | sed 's/M//')
 
 #Current time in `2019-11-26 14:40:19` UTC format
-timestamp= $(date "+%D %T")
+timestamp=$(date "+%Y-%m-%d %T")
 
 # Subquery to find matching id in host_info table
 host_id="(SELECT id FROM host_info WHERE hostname='$hostname')";
 #execute the INSERT statement
 # Construct the INSERT statement
-insert_stmt="INSERT INTO host_usage(timestamp, host_id, memory_free, cpu_idle, cpu_kernel, disk_io) VALUES ('$timestamp', $host_id, $memory_free, $cpu_idle, $cpu_kernel, $disk_io)"
+insert_stmt="INSERT INTO host_usage(timestamp, host_id, memory_free, cpu_idle, cpu_kernel, disk_io, disk_available) VALUES ('$timestamp', $host_id, $memory_free, $cpu_idle, $cpu_kernel, $disk_io, $disk_available)"
 
 #set up env var for pql cmd
 export PGPASSWORD=$psql_password

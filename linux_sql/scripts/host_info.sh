@@ -21,10 +21,10 @@ memory_free=$(echo "$vmstat_mb" | awk '{print $4}'| tail -n1 | xargs)
 cpu_idle=$(echo "$vmstat_mb" | awk '{print $15}' | tail -n1 | xargs)
 cpu_kernel=$(echo "$vmstat_mb" | awk '{print $14}' | tail -n1 | xargs)
 disk_io=$(vmstat -d | awk '{print $10}' | tail -n1 | xargs)
-disk_available=$(df -BM / | awk '{print $4}' | tail -n1)
+disk_available=$(df -BM / | awk '{print $4}' | tail -n1 | sed 's/M//')
 
 # Current time in `2019-11-26 14:40:19` UTC format
-timestamp= $(date "+%D %T")
+timestamp=$(date "+%Y-%m-%d %T")
 
 # Subquery to find matching id in host_info table
 host_id="(SELECT id FROM host_info WHERE hostname='$hostname')";

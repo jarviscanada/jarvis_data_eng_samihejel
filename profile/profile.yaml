@@ -1,0 +1,103 @@
+# Preferred name (Characters only)
+name: "Samih Ejel"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_samihejel
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: Hi there my name is Samih (pronounced like sammy! I'm a recent Computer Science grad from Ontario Tech University and I'm super eager to take my first steps into the world of tech. The tech industry in particular really interests me because of how it's always changing and evolving. As someone who really enjoys the process of learning this is huge for me because it provides the opportunity to constantly be learning something new and honing my skills. I'm also drawn to the problem solving aspect of the industry. I actually had no coding experience prior to university and I ended up picking Computer Science based on the fact that it led to a career where I could be challenged and constantly solve problems.
+
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - Java
+    - Python
+    - C/C++
+    - Agile/Scrum
+    - Git
+  # At least 5 skills
+  competent:
+    - Linux/Bash
+    - RDBMS/SQL
+    - R
+    - GCP
+    - HTML/CSS
+  # At least 5 skills
+  familiar:
+    - .NET
+    - Selenium
+    - Spark
+    - Vue
+    - Docker
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Developed a Linux Cluster Monitoring app with LCI, Bash scripts, PostgreSQL, and Docker which is used for recording the hardware specifications of each node and monitoring node resource usage in real-time. Implemented the app with LCI, Bash scripts, and PostgreSQL. Dockerized the app and used cron to automate."
+  - name: "Core Java Apps"
+    git_url: "/core_java"
+    description:
+      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+      - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+  - name: "Springboot App"
+    git_url: "/springboot"
+    description: ""
+  - name: "Python Data Analytics"
+    git_url: "/python_data_anlytics"
+    description: ""
+  - name: "Hadoop"
+    git_url: "/hadoop"
+    description: ""
+  - name: "Spark"
+    git_url: "/spark"
+    description: ""
+  - name: "Cloud/DevOps"
+    git_url: "/cloud_devops"
+    description: ""
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "MovieLens Analysis"
+    #URL is optional
+    git_url: "https://github.com/samihejel/MovieLensAnalysis/blob/main/MovieLensAnalysis.ipynb"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Conducted analysis of movie genres, average ratings, and tag relevance. Used PySpark's DataFrame operations to join and pre-process datasets for analysis. Visualized genre popularity trends using Matplotlib. Calculated average ratings and tag relevance for each genre, leading to identification of popular genres."
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Cleaner/Front Desk"
+    company: "Ether Inc"
+    duration: "2021-2021"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "
+Worked in retirement home sanitizing high touch surfaces and logging the forehead temperatures of employees and visitors upon entry and exit. Cooperated with coworkers to keep track of surfaces that were clean / had yet to be clean. Quickly checked and logged the temperatures of employees clocking in/out as well as visitors."
+  - title: "Dishwasher/Sandwich Maker "
+    company: "Paramount Fine Foods"
+    duration: "2019-2019"
+    description: "Washed dishes and made sandwiches for customers at takeout section in hybrid Dine-In/Takeout restaurant. Communicated effectively with coworkers in busy restaurant to complete orders efficiently. Took orders from customers quickly while also keeping a friendly atmosphere and prepared them to their liking on the spot."
+
+#List of edcuation
+education: 
+  - school_name: "Ontario Tech University"
+    duration: "2019-2023"
+    degree: "Bachelor of Sciences"
+    department: "Computer Science"
+    awards_achievements:
+#Optional section
+others:
+  - title: "Activities/Hobbies"
+    bullets:
+      - "Rugby"
+      - "Competitive gaming"
+      - "Hiking"

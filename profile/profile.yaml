@@ -5,7 +5,7 @@ github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_samihejel
 
 # Introduce yourself, your academic and professional background.
 # What excites you about the software industry and your passion. At least 80 words
-summary: Hi there my name is Samih (pronounced like sammy! I'm a recent Computer Science grad from Ontario Tech University and I'm super eager to take my first steps into the world of tech. The tech industry in particular really interests me because of how it's always changing and evolving. As someone who really enjoys the process of learning this is huge for me because it provides the opportunity to constantly be learning something new and honing my skills. I'm also drawn to the problem solving aspect of the industry. I actually had no coding experience prior to university and I ended up picking Computer Science based on the fact that it led to a career where I could be challenged and constantly solve problems.
+summary: Hey there my name is Samih (it's pronounced like sammy). I'm a recent Computer Science grad from Ontario Tech University and I'm super pumped to take my first steps into the industry. Python is definitely my language of choice since I've spent so much of my time at school using it and because I think the readability of the language makes it a lot easier to focus on the problem solving aspect of coding. I've also spent a decent portion of my degree working with Java and C++. I'm someone who really enjoys the process of learning and actively seek out new technologies to dip my toes into and try out. My goal as a developer is to contribute to something that affects others in a positive way.
 
 # Group your skills by level.
 # Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
@@ -14,7 +14,7 @@ skills:
   proficient:
     - Java
     - Python
-    - C/C++
+    - C++
     - Agile/Scrum
     - Git
   # At least 5 skills
@@ -98,6 +98,6 @@ education:
 others:
   - title: "Activities/Hobbies"
     bullets:
-      - "Rugby"
-      - "Competitive gaming"
+      - "Rugby: Played in highschool and TIRF league, I'm out of commission nowadays though."
+      - "Competitive gaming: Enjoy fighting games a lot, not a pro but I try to take it seriously and attend local tournaments every so often"
       - "Hiking"

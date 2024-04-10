@@ -31,14 +31,11 @@ case $cmd in
   # Create container
 	docker volume create jrvs-psql
   # Start the container
-	docker run --name jrvs-psql \
-	    -e POSTGRES_USER=$db_username \
-	    -e POSTGRES_PASSWORD=$db_password \
-	    -d \
-	    -v jrvs-psql-data:/var/lib/postgresql/data \
-	    -p 5432:5432 postgres:9.6-alpine
+	docker run --name jrvs-psql -e POSTGRES_USER=$db_username -e POSTGRES_PASSWORD=$db_password -d -v jrvs-psql-data:/var/lib/postgresql/data -p 5432:5432 postgres:9.6-alpine
 
   # Make sure you understand what's `$?`
+  echo $db_username
+  echo $db_password
 	exit $?
 	;;
 

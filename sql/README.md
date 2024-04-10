@@ -467,6 +467,3 @@ GROUP BY
 ORDER BY 
   letter;
 ```
-
-
-

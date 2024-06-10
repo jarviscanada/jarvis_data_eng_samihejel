@@ -3,12 +3,15 @@ package ca.jrvs.apps.stockquote;
 import ca.jrvs.apps.stockquote.dao.PositionService;
 import ca.jrvs.apps.stockquote.dao.Quote;
 import ca.jrvs.apps.stockquote.dao.QuoteService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Optional;
 import java.util.Scanner;
 
 public class StockQuoteController {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(StockQuoteController.class);
     private QuoteService quoteService;
     private PositionService positionService;
     public StockQuoteController(QuoteService quoteService, PositionService positionService) {
@@ -94,7 +97,7 @@ public class StockQuoteController {
         }
         Optional<Quote> quoteData = quoteService.fetchQuoteDataFromAPI(stock);
         if (!quoteData.isEmpty()) {
-            //logger.info("Latest Stock Information: {}", quote);
+            LOGGER.info("Latest Stock Information: {}", quoteData);
             System.out.println("Latest Stock Information: ");
             System.out.println(quoteData);
             System.out.println("Enter number of shares to buy: ");
@@ -102,7 +105,7 @@ public class StockQuoteController {
             positionService.buy(stock, numShares, quoteData.get().getPrice());
             System.out.println(numShares + " shares of" + stock + " bought at " + quoteData.get().getPrice());
         }else{
-            //logger.warn("No quote found for symbol: {}", stock);
+            LOGGER.warn("No quote found for symbol: {}", stock);
             System.out.println("No quote found for symbol: " + stock);
         }
 
@@ -118,13 +121,13 @@ public class StockQuoteController {
         }
         Optional<Quote> quoteData = quoteService.fetchQuoteDataFromAPI(stock);
         if (!quoteData.isEmpty()) {
-            //logger.info("Latest Stock Information: {}", quote);
+            LOGGER.info("Latest Stock Information: {}", quoteData);
             System.out.println("Latest Stock Information: ");
             System.out.println(quoteData);
             positionService.sell(stock);
             System.out.println("All shares of " + stock + " sold at " + quoteData.get().getPrice());
         }else{
-            //logger.warn("No quote found for symbol: {}", stock);
+            LOGGER.warn("No quote found for symbol: {}", stock);
             System.out.println("No quote found for symbol: " + stock);
         }
     }

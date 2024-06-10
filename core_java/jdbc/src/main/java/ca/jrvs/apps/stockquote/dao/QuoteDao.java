@@ -1,6 +1,8 @@
 package ca.jrvs.apps.stockquote.dao;
 
 import ca.jrvs.apps.jdbc.Customer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +13,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class QuoteDao implements CrudDao<Quote, String> {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(PositionDao.class);
+
 
     private Connection c;
 
@@ -42,6 +47,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
 
                 statement.execute();
             }catch(SQLException e){
+                LOGGER.error("Error occurred while updating quote with symbol: {}", entity.getTicker(), e);
                 e.printStackTrace();
                 throw new RuntimeException(e);
             }
@@ -62,6 +68,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
 
                 insertStatement.execute();
             }catch(SQLException e){
+                LOGGER.error("Error occurred while inserting quote with symbol: {}", entity.getTicker(), e);
                 e.printStackTrace();
                 throw new RuntimeException(e);
             }
@@ -90,6 +97,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 quote.setTimestamp(rs.getTimestamp("timestamp"));
             }
         }catch(SQLException e){
+            LOGGER.error("Error occurred while finding quote with symbol: {}", id, e);
             e.printStackTrace();
             throw new RuntimeException(e);
         }
@@ -117,6 +125,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
                 quotes.add(quote);
             }
         } catch (SQLException e) {
+            LOGGER.error("Error occurred while finding all quotes", e);
             e.printStackTrace();
             throw new RuntimeException(e);
         }
@@ -129,6 +138,7 @@ public class QuoteDao implements CrudDao<Quote, String> {
             statement.setString(1, id);
             statement.execute();
         }catch(SQLException e){
+            LOGGER.error("Error occurred while deleting quote with symbol: {}", id, e);
             e.printStackTrace();
             throw new RuntimeException(e);
         }
@@ -139,6 +149,8 @@ public class QuoteDao implements CrudDao<Quote, String> {
         try(PreparedStatement statement = this.c.prepareStatement(DELETE_ALL);){
             statement.execute();
         }catch(SQLException e){
+            LOGGER.error("Error occurred while deleting all quotes", e);
+
             e.printStackTrace();
             throw new RuntimeException(e);
         }

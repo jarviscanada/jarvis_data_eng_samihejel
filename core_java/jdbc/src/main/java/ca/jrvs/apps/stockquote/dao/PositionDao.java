@@ -1,5 +1,8 @@
 package ca.jrvs.apps.stockquote.dao;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class PositionDao implements CrudDao<Position, String> {
+    private static final Logger LOGGER = LoggerFactory.getLogger(PositionDao.class);
 
     private static final String INSERT = "INSERT into position (symbol, number_of_shares, value_paid) VALUES (?,?,?)";
     private static final String GET_ONE = "SELECT symbol, number_of_shares, value_paid FROM position WHERE symbol = ?";
@@ -16,6 +20,7 @@ public class PositionDao implements CrudDao<Position, String> {
     private static final String DELETE = "DELETE FROM position WHERE symbol = ?";
     private static final String DELETE_ALL = "DELETE FROM position";
     private static final String GET_ALL = "SELECT * FROM position";
+
     private Connection c;
 
     public PositionDao(Connection connection) {
@@ -31,6 +36,7 @@ public class PositionDao implements CrudDao<Position, String> {
                 statement.setDouble(3, entity.getValuePaid());
                 statement.execute();
             }catch(SQLException e){
+                LOGGER.error("Error saving position entity: {}", entity, e);
                 e.printStackTrace();
                 throw new RuntimeException(e);
             }
@@ -43,6 +49,7 @@ public class PositionDao implements CrudDao<Position, String> {
 
                 insertStatement.execute();
             }catch(SQLException e){
+                LOGGER.error("Error updating position entity: {}", entity, e);
                 e.printStackTrace();
                 throw new RuntimeException(e);
             }
@@ -62,6 +69,7 @@ public class PositionDao implements CrudDao<Position, String> {
                 position.setValuePaid(rs.getDouble("value_paid"));
             }
         }catch(SQLException e){
+            LOGGER.error("Error finding position by id: {}", id, e);
             e.printStackTrace();
             throw new RuntimeException(e);
         }
@@ -81,6 +89,7 @@ public class PositionDao implements CrudDao<Position, String> {
                 positions.add(position);
             }
         }catch(SQLException e){
+            LOGGER.error("Error finding all positions", e);
             e.printStackTrace();
             throw new RuntimeException(e);
         }

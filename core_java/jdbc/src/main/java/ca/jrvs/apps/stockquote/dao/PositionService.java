@@ -1,10 +1,18 @@
 package ca.jrvs.apps.stockquote.dao;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Optional;
 
 public class PositionService {
 
     private PositionDao dao;
+    private static final Logger LOGGER = LoggerFactory.getLogger(PositionService.class);
+
+    public PositionService(PositionDao dao) {
+        this.dao = dao;
+    }
 
     /**
      * Processes a buy order and updates the database accordingly
@@ -13,10 +21,6 @@ public class PositionService {
      * @param price
      * @return The position in our database after processing the buy
      */
-    public PositionService(PositionDao dao) {
-        this.dao = dao;
-    }
-
     public Optional<Position> buy(String ticker, int numberOfShares, double price) {
         // Retrieve existing position for the given ticker
         Optional<Position> existingPosition = dao.findById(ticker);
@@ -31,6 +35,7 @@ public class PositionService {
             position.setValuePaid(numberOfShares * price);
         }
         dao.save(position);
+        LOGGER.info("Successfully processed buy order for ticker: {}, shares: {}, price: {}", ticker, numberOfShares, price);
         return Optional.of(position);
 
     }
@@ -43,6 +48,9 @@ public class PositionService {
         Optional<Position> position = dao.findById(ticker);
         if(position.isPresent()){
             dao.deleteById(ticker);
+            LOGGER.info("Successfully sold all shares for ticker: {}", ticker);
+        }else {
+            LOGGER.warn("Attempted to sell shares for ticker: {}, but no position found", ticker);
         }
 
     }

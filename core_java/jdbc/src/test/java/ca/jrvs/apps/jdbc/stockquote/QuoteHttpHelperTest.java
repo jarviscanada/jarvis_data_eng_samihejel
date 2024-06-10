@@ -40,7 +40,7 @@ public class QuoteHttpHelperTest {
 
     @Before
     public void setUp() {
-        quoteHttpHelper = new QuoteHttpHelper(testKey, client);
+        quoteHttpHelper = new QuoteHttpHelper(testKey);
         objectMapper = new ObjectMapper();
     }
 

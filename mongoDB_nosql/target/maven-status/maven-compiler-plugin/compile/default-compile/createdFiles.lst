@@ -1,0 +1,7 @@
+ca\jrvs\insurance_api\model\Person.class
+ca\jrvs\insurance_api\InsuranceApiApplication.class
+ca\jrvs\insurance_api\model\Car.class
+ca\jrvs\insurance_api\service\PersonService.class
+ca\jrvs\insurance_api\controller\PersonController.class
+ca\jrvs\insurance_api\model\Address.class
+ca\jrvs\insurance_api\repository\PersonRepository.class

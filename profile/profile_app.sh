@@ -14,7 +14,7 @@ function check_status() {
   exit_code=$1
   if [ ${exit_code} -eq 0 ]
   then
-    echo "Success!!!👍"
+    echo "Success!!!??"
     echo ""
   else
     echo "Failed"

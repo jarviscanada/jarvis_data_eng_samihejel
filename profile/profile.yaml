@@ -41,10 +41,7 @@ jarvis_projects:
     description: "Developed a Linux Cluster Monitoring app with LCI, Bash scripts, PostgreSQL, and Docker which is used for recording the hardware specifications of each node and monitoring node resource usage in real-time. Implemented the app with LCI, Bash scripts, and PostgreSQL. Dockerized the app and used cron to automate."
   - name: "Core Java Apps"
     git_url: "/core_java"
-    description:
-      - "Twitter App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
-      - "JDBC App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
-      - "Grep App: Curabitur laoreet tristique leo, eget suscipit nisi. Sed in sodales ex. Maecenas vitae tincidunt dui, et eleifend quam."
+    description: "Grep App: Implemented the Grep command from linux using Java, optimized with streams and lambda expressions, and built and deployed with Docker and Maven."
   - name: "Springboot App"
     git_url: "/springboot"
     description: ""
@@ -100,4 +97,3 @@ others:
     bullets:
       - "Rugby: Played in highschool and TIRF league, I'm out of commission nowadays though."
       - "Competitive gaming: Enjoy fighting games a lot, not a pro but I try to take it seriously and attend local tournaments every so often"
-      - "Hiking"

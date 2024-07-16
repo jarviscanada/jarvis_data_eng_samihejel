@@ -23,42 +23,28 @@
       "name": "Cluster Monitor"
     },
     {
-      "description": "Grep App: Implemented the Grep command from linux using Java, optimized with streams and lambda expressions, and built and deployed with Docker and Maven.",
+      "description": "Implemented the Grep command from linux using Java, optimized with streams and lambda expressions, and built and deployed with Docker and Maven.",
       "git_url": "/core_java",
       "name": "Core Java Apps"
     },
     {
-      "description": "",
-      "git_url": "/springboot",
-      "name": "Springboot App"
+      "description": "Created a Spring application that interacts with the insurance data of a company stored inside MongoDB",
+      "git_url": "/mongoDB_nosql",
+      "name": "MongoDB NoSQL Insurance App"
     },
     {
-      "description": "",
-      "git_url": "/python_data_anlytics",
-      "name": "Python Data Analytics"
-    },
-    {
-      "description": "",
-      "git_url": "/hadoop",
-      "name": "Hadoop"
-    },
-    {
-      "description": "",
-      "git_url": "/spark",
-      "name": "Spark"
-    },
-    {
-      "description": "",
-      "git_url": "/cloud_devops",
-      "name": "Cloud/DevOps"
+      "description": "Created 3 Dashboards based on different datasets to effectively visualize the data for consumption. Utilized data cleaning and filtering techniques to ensure the data was fit for the graphics.",
+      "git_url": "/powerbi",
+      "name": "PowerBI"
     }
   ],
   "name": "Samih Ejel",
   "others": [
     {
       "bullets": [
-        "Rugby: Played in highschool and TIRF league, I'm out of commission nowadays though.",
-        "Competitive gaming: Enjoy fighting games a lot, not a pro but I try to take it seriously and attend local tournaments every so often"
+        "Bouldering: Recently got into bouldering and have been consistently going for a couple months",
+        "Rugby: Played in highschool and TIRF league.",
+        "Competitive gaming: Enjoy fighting games a lot, not a professional but I take it seriously and attend local tournaments every so often"
       ],
       "title": "Activities/Hobbies"
     }
